@@ -4,7 +4,7 @@ Generator strony slajdów (telefon + komputer) i PDF-ów.
 
 ## Aktualizacja
 1. Edytuj teksty w `build.py` (słownik `CONTENT`) lub zdjęcia w `photos/`.
-2. `python3 build.py es && python3 render.py es && python3 web.py`
+2. `python3 build.py es && python3 render.py es && python3 og.py && python3 web.py`
    (wymaga Python 3, Playwright + Chromium, Pillow).
 3. Wynik: `site/p/bsxx4itt/` (strona) i `out/*.pdf` (PDF-y; kopia w `dist/`).
 4. `git commit` + `git push`, potem w cPanel: Git Version Control > Manage > Deploy HEAD Commit.

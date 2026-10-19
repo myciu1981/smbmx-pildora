@@ -108,17 +108,19 @@ css += ".slide .stage{position:absolute;left:50%;top:50%;overflow:hidden}"
 # set stage fixed size explicitly per mode so transform math is exact
 css += ".ph .stage{width:1080px;height:1920px}.dk .stage{width:1920px;height:1080px}"
 
-desc = "Protección solar exterior premium, seguridad y confort fabricados en Europa, para proyectos residenciales, comerciales y hoteleros."
+desc = "Protección solar, seguridad y confort desde el exterior."
 html = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow,noarchive,noimageindex">
 <meta name="theme-color" content="#1A355C">
-<title>Simple Made Blinds Mexico · Productos</title>
+<title>Simple Made Blinds Mexico · Sistemas exteriores para ventanas</title>
 <meta name="description" content="{desc}">
 <meta property="og:type" content="website"><meta property="og:locale" content="es_MX">
-<meta property="og:title" content="Simple Made Blinds Mexico · Productos">
+<meta property="og:title" content="Simple Made Blinds Mexico · Sistemas exteriores para ventanas">
+<meta property="og:url" content="https://simplemadeblinds.mx/p/bsxx4itt/"><meta property="og:site_name" content="Simple Made Blinds Mexico">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="og.jpg">
+<meta property="og:image" content="https://simplemadeblinds.mx/p/bsxx4itt/og-v2.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Simple Made Blinds Mexico - Sistemas exteriores para ventanas">
+<meta name="twitter:card" content="summary_large_image">
 <style>{css}</style></head><body>
 {slides("phone","ph")}{slides("desk","dk")}
 <nav class="dots" id="dots" aria-label="Páginas"></nav>
@@ -142,7 +144,5 @@ AddType font/ttf .ttf
 (OUT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
 
 from PIL import Image
-im = Image.open(ROOT / "out" / "es_desk_1.png").convert("RGB")
-im = im.resize((1200, 675), Image.LANCZOS)
-im.save(OUT / "og.jpg", quality=84)
+shutil.copy(ROOT / "out" / "og-v2.jpg", OUT / "og-v2.jpg")
 print("ok", OUT, sum(f.stat().st_size for f in OUT.rglob("*") if f.is_file())//1024, "KB")
