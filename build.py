@@ -75,7 +75,7 @@ CONTENT = {
    {"key":"p5","label":"","name":"Mosquiteros",
     "tag":"Aire fresco, sin insectos.",
     "desc":"Mosquiteros discretos para ventanas y puertas. Dejan pasar el aire y detienen mosquitos y otros insectos.",
-    "items":[("aire","Ventilación","disfrute del aire fresco con tranquilidad."),
+    "items":[("aire","Ventilación","aire fresco con tranquilidad."),
              ("ancho","Grandes accesos","plisados hasta 4 m (sencillo) o 6 m (doble)."),
              ("plisado","Discreto","se recoge cuando no se usa.")],
     "small":"Medidas según el modelo.", "photos":["m2","m1"]},
@@ -85,7 +85,7 @@ CONTENT = {
     "items":[("lamas","Sombra regulable","las lamas se orientan según el sol."),
              ("gota","Contra la lluvia","con drenaje integrado."),
              ("switch","Control","manual o automática; iluminación LED opcional.")],
-    "small":"", "photos":["pg"], "diptych":True},
+    "small":"", "photos":["pg"], "wide":True},
   ],
   "cover": {"title":"Sistemas exteriores para ventanas","sub":"Protección solar, seguridad y confort desde el exterior.",
     "lead":"Nuestras soluciones:",
@@ -99,7 +99,7 @@ CONTENT = {
     "with":["Desarrolladores y constructoras.","Hoteles y empresas de hospitalidad.",
             "Fabricantes y distribuidores de ventanas y sistemas de protección solar."],
     "quote":"Cada proyecto se cotiza a la medida.",
-    "talk":"Hablemos de su proyecto",
+    "talk":"Hablemos de tu proyecto",
     "contacts":[("tel","+52 81 2590 1796","tel:+528125901796"),
                 ("mail","info@simplemadeblinds.mx","mailto:info@simplemadeblinds.mx"),
                 ("web","simplemadeblinds.mx","https://simplemadeblinds.mx/"),
@@ -108,7 +108,16 @@ CONTENT = {
   },
  },
 }
+IDEAL = {"es": {
+  "p1": "recámaras, habitaciones de hotel y oficinas con sol directo.",
+  "p2": "planta baja, locales comerciales y accesos a terrazas o jardines.",
+  "p3": "oficinas, fachadas comerciales y áreas de trabajo.",
+  "p4": "grandes ventanales, terrazas y áreas con vista.",
+  "p5": "ventanas y puertas corredizas de viviendas, hoteles y oficinas.",
+  "p6": "terrazas, restaurantes y áreas comunes de hoteles y desarrollos."}}
 C = CONTENT[LANG]
+for _p in C["pages"]:
+    _p["ideal"] = IDEAL[LANG][_p["key"]]
 
 # ---------- CSS ----------
 BASE_CSS = """
@@ -134,37 +143,42 @@ img{display:block}
 .small{color:var(--gris)}
 .foot{color:var(--gris)}
 .foot a{color:var(--navy);font-weight:600}
+.slats{position:absolute;inset:0}
+.slats i{position:absolute;left:0;right:0;top:0;height:var(--sh);background:var(--navy);transform-origin:0 0;transform:translateY(calc(var(--i)*var(--pitch))) scaleY(var(--sc))}
 """
 
 PHONE_CSS = """
 @page{size:1080px 1920px;margin:0}
-.page{width:1080px;height:1920px;padding:56px 72px 0 72px;display:flex;flex-direction:column}
+.page{width:1080px;height:1920px;padding:72px 72px 0 72px;display:flex;flex-direction:column}
 .logo{height:68px;width:auto;align-self:flex-start}
-.top{margin-top:40px}
-.label{font-size:26px;margin-bottom:14px}
-.badge{font-size:25px;padding:8px 22px;margin-bottom:16px;border-radius:0}
-.name{font-size:86px;line-height:1.04}
-.tag{font-size:46px;line-height:1.2;margin-top:20px}
-.desc{font-size:38px;line-height:1.4;margin-top:18px}
+.top{margin-top:36px}
+.label{font-size:26px;margin-bottom:12px}
+.badge{font-size:26px;padding:8px 22px;margin-bottom:16px;border-radius:0}
+.name{font-size:84px;line-height:1.04}
+.tag{font-size:46px;line-height:1.2;margin-top:18px}
+.desc{font-size:38px;line-height:1.36;margin-top:16px}
 .photos{display:flex;gap:32px;margin-top:28px}
 .photos .photo{width:452px;height:603px}
-.dip{margin-top:28px;width:936px;height:603px;position:relative}
-.dip .photo{position:absolute;inset:0}
-.dip .cut{position:absolute;top:0;bottom:0;left:452px;width:32px;background:#fff}
-.items{margin-top:24px;border-top:2px solid var(--linea)}
-.item{display:flex;gap:26px;align-items:center;padding:16px 0;border-bottom:2px solid var(--linea);font-size:38px;line-height:1.3}
+.photos .photo.wide{width:936px;height:527px;background-size:100% 100%}
+.items{margin-top:22px;border-top:2px solid var(--linea);flex:1;display:flex;flex-direction:column}
+.item{flex:1;display:flex;gap:26px;align-items:center;padding:12px 0;border-bottom:2px solid var(--linea);font-size:38px;line-height:1.28}
 .item .ic{width:76px;height:76px}
-.small{font-size:25px;line-height:1.3;margin-top:16px}
-.foot{margin-top:auto;padding:22px 0 44px 0;font-size:32px;border-top:0}
+.foot{padding:20px 0 48px 0;max-width:800px}
+.foot .ideal{font-size:30px;line-height:1.33;color:var(--texto)}
+.foot .ideal b{font-weight:600;color:var(--navy)}
+.foot .small{font-size:25px;line-height:1.3;margin-top:8px}
+.foot .link{display:block;font-size:30px;margin-top:12px}
 /* cover */
-.page.cover{padding:0 80px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-.cover .logo{height:auto;width:620px;align-self:flex-start}
-.cover .ctitle{font-weight:500;color:var(--navy);font-size:96px;line-height:1.04;letter-spacing:-.01em;margin-top:110px}
-.cover .csub{font-weight:400;color:var(--texto);font-size:44px;line-height:1.3;margin-top:28px}
-.cover .lead{font-weight:600;color:var(--navy);font-size:30px;letter-spacing:.14em;text-transform:uppercase;margin-top:110px}
-.cover .sol{font-weight:500;color:var(--texto);font-size:40px;line-height:1.45;margin-top:18px}
+.page.cover{background:#fff}
+.cover .ctitle{font-weight:500;color:var(--navy);font-size:104px;line-height:1.03;letter-spacing:-.01em;margin-top:64px}
+.cover .csub{font-weight:400;color:var(--texto);font-size:46px;line-height:1.3;margin-top:24px}
+.cover .hero{position:relative;margin:auto -72px 0;width:1080px;height:608px;overflow:hidden;flex:none;--sh:50.667px;--sc:.0789;--pitch:6px}
+.cover .hero img{width:100%;height:100%;object-fit:cover}
+.cover .cbottom{margin-top:auto;padding-top:0}
+.cover .lead{font-weight:600;color:var(--navy);font-size:30px;letter-spacing:.14em;text-transform:uppercase}
+.cover .sol{font-weight:500;color:var(--texto);font-size:42px;line-height:1.42;margin-top:18px}
 .cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
-.cover .cfoot{position:absolute;left:80px;right:80px;bottom:56px;font-size:28px;line-height:1.35;color:var(--gris)}
+.cover .cfoot{font-size:28px;line-height:1.35;color:var(--gris);margin-top:44px;padding-bottom:52px;max-width:780px}
 /* closing */
 .page.close{background:var(--navy);color:#fff;padding-bottom:0}
 .close .logo{height:68px}
@@ -188,34 +202,40 @@ PHONE_CSS = """
 DESK_CSS = """
 @page{size:1920px 1080px;margin:0}
 .page{width:1920px;height:1080px}
-.left{position:absolute;left:80px;top:48px;width:800px}
+.left{position:absolute;left:80px;top:56px;width:790px}
 .logo{height:60px;width:auto;display:block}
 .top{margin-top:34px}
 .label{font-size:22px;margin-bottom:12px}
 .badge{font-size:20px;padding:6px 18px;margin-bottom:14px}
-.name{font-size:82px;line-height:1.04}
+.name{font-size:84px;line-height:1.04}
 .tag{font-size:40px;line-height:1.2;margin-top:14px}
-.desc{font-size:29px;line-height:1.4;margin-top:12px;width:790px}
-.photos{position:absolute;right:0;top:0;width:968px;height:640px;display:flex;gap:8px}
+.desc{font-size:29px;line-height:1.38;margin-top:12px;width:790px}
+.photos{position:absolute;right:0;top:0;height:640px;display:flex;gap:8px}
 .photos .photo{width:480px;height:640px}
-.dip{position:absolute;right:0;top:0;width:968px;height:640px}
-.dip .photo{position:absolute;inset:0;background-position:50% 50%}
-.dip .cut{position:absolute;top:0;bottom:0;left:480px;width:8px;background:#fff}
+.photos .photo.wide{width:1138px;background-size:100% 100%}
+.page.pg .left{width:680px}
+.page.pg .desc{width:680px}
 .band{position:absolute;left:0;right:0;top:640px;height:440px;background:var(--powder)}
-.items{position:absolute;left:80px;right:80px;top:690px;display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
-.item{display:flex;gap:24px;align-items:flex-start;font-size:36px;line-height:1.32}
-.item .ic{width:84px;height:84px}
-.small{position:absolute;left:80px;top:958px;font-size:24px}
-.foot{position:absolute;left:80px;bottom:36px;font-size:30px}
+.items{position:absolute;left:80px;right:80px;top:654px;height:330px;display:grid;grid-template-columns:repeat(3,1fr);gap:56px;align-content:center;align-items:start}
+.item{display:flex;gap:24px;align-items:flex-start;font-size:38px;line-height:1.3}
+.item .ic{width:92px;height:92px}
+.foot{position:absolute;left:80px;right:80px;bottom:38px;display:flex;justify-content:space-between;align-items:flex-end}
+.foot .ideal{font-size:28px;line-height:1.35;color:var(--texto)}
+.foot .ideal b{font-weight:600;color:var(--navy)}
+.foot .small{font-size:22px;margin-top:4px}
+.foot .link{font-size:28px}
 /* cover */
-.page.cover{padding:0 0 0 160px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-.cover .logo{height:auto;width:480px}
-.cover .ctitle{font-weight:500;color:var(--navy);font-size:84px;line-height:1.04;letter-spacing:-.01em;margin-top:64px}
-.cover .csub{font-weight:400;color:var(--texto);font-size:38px;line-height:1.3;margin-top:20px}
-.cover .lead{font-weight:600;color:var(--navy);font-size:24px;letter-spacing:.14em;text-transform:uppercase;margin-top:64px}
-.cover .sol{font-weight:500;color:var(--texto);font-size:32px;line-height:1.4;margin-top:14px;width:1700px}
+.page.cover{background:#fff}
+.cover .cleft{position:absolute;left:80px;top:56px}
+.cover .ctitle{font-weight:500;color:var(--navy);font-size:88px;line-height:1.04;letter-spacing:-.01em;margin-top:44px;white-space:nowrap}
+.cover .csub{font-weight:400;color:var(--texto);font-size:40px;line-height:1.3;margin-top:14px}
+.cover .hero{position:absolute;left:0;top:420px;width:1920px;height:440px;overflow:hidden;--sh:36.667px;--sc:.109;--pitch:6px}
+.cover .hero img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.cover .cbottom{position:absolute;left:80px;right:80px;top:894px}
+.cover .lead{font-weight:600;color:var(--navy);font-size:22px;letter-spacing:.14em;text-transform:uppercase}
+.cover .sol{font-weight:500;color:var(--texto);font-size:34px;line-height:1.35;margin-top:10px}
 .cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
-.cover .cfoot{position:absolute;left:160px;bottom:44px;font-size:24px;color:var(--gris)}
+.cover .cfoot{position:absolute;left:80px;bottom:30px;font-size:22px;color:var(--gris)}
 /* closing */
 .page.close{background:var(--navy);color:#fff}
 .close .left{width:1000px}
@@ -247,30 +267,33 @@ def product_page(p, mode):
         label = f'<div class="badge">{p["label"]}</div>'
     elif p.get("label"):
         label = f'<div class="label">{p["label"]}</div>'
-    if p.get("diptych"):
-        ph = f'<div class="dip"><div class="photo" style="background-image:url(photos/{p["photos"][0]}.jpg)"></div><div class="cut"></div></div>'
-    else:
-        ph = '<div class="photos">' + "".join(f'<div class="photo" style="background-image:url(photos/{x}.jpg);background-position:50% 45%"></div>' for x in p["photos"]) + '</div>'
+    cls = "page pg" if p.get("wide") else "page"
+    wide = " wide" if p.get("wide") else ""
+    ph = '<div class="photos">' + "".join(f'<div class="photo{wide}" style="background-image:url(photos/{x}.jpg);background-position:50% 45%"></div>' for x in p["photos"]) + '</div>'
     small = f'<div class="small">{p["small"]}</div>' if p.get("small") else ""
-    foot = f'<div class="foot">{C["footer_prod"]}</div>'
+    foot = (f'<div class="foot"><div class="fl"><div class="ideal"><b>Ideal para:</b> {p["ideal"]}</div>{small}</div>'
+            f'<a class="link" href="https://simplemadeblinds.mx/">simplemadeblinds.mx</a></div>')
     if mode == "phone":
-        return (f'<section class="page" id="{p["key"]}">{logo()}<div class="top">{label}'
+        return (f'<section class="{cls}" id="{p["key"]}">{logo()}<div class="top">{label}'
                 f'<div class="name">{p["name"]}</div><div class="tag">{p["tag"]}</div>'
-                f'<div class="desc">{p["desc"]}</div></div>{ph}<div class="items">{items}</div>{small}{foot}</section>')
-    return (f'<section class="page" id="{p["key"]}"><div class="left">{logo()}<div class="top">{label}'
+                f'<div class="desc">{p["desc"]}</div></div>{ph}<div class="items">{items}</div>{foot}</section>')
+    return (f'<section class="{cls}" id="{p["key"]}"><div class="left">{logo()}<div class="top">{label}'
             f'<div class="name">{p["name"]}</div><div class="tag">{p["tag"]}</div>'
             f'<div class="desc">{p["desc"]}</div></div></div>{ph}<div class="band"></div>'
-            f'<div class="items">{items}</div>{small}{foot}</section>')
+            f'<div class="items">{items}</div>{foot}</section>')
 
 def cover_page(mode):
     c = C["cover"]
-    sol = ' <span class="d">&middot;</span> '.join(c["items"])
-    sol = sol.replace(" <span", "&nbsp;<span", 1) if False else sol
     items = c["items"]
     sol = "".join(f'{t}&nbsp;<span class="d">&middot;</span> ' for t in items[:-1]) + items[-1]
-    return (f'<section class="page cover" id="p0">{logo()}'
-            f'<div class="ctitle">{c["title"]}</div><div class="csub">{c["sub"]}</div>'
-            f'<div class="lead">{c["lead"]}</div><div class="sol">{sol}</div>'
+    slats = "".join(f'<i style="--i:{k}"></i>' for k in range(12))
+    hero = f'<div class="hero"><img src="photos/cover.jpg" alt="Monterrey"><div class="slats">{slats}</div></div>'
+    head = f'<div class="ctitle">{c["title"]}</div><div class="csub">{c["sub"]}</div>'
+    bottom = f'<div class="cbottom"><div class="lead">{c["lead"]}</div><div class="sol">{sol}</div>'
+    if mode == "phone":
+        return (f'<section class="page cover" id="p0">{logo()}{head}{hero}{bottom}'
+                f'<div class="cfoot">{c["foot"]}</div></div></section>')
+    return (f'<section class="page cover" id="p0"><div class="cleft">{logo()}{head}</div>{hero}{bottom}</div>'
             f'<div class="cfoot">{c["foot"]}</div></section>')
 
 def closing_page(mode):

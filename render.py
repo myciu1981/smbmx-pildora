@@ -24,7 +24,7 @@ async def main():
                 const sb = s.getBoundingClientRect(); let worst = s.scrollHeight, who = 'scroll';
                 s.querySelectorAll('*').forEach(e => { const r = e.getBoundingClientRect();
                   if (r.height>0 && r.bottom - sb.top > worst) { worst = r.bottom - sb.top; who = e.className || e.tagName; } });
-                return [s.id, Math.round(worst), Math.round(sb.height), s.scrollHeight>sb.height+1?'OVERFLOW':'ok'] })""")
+                const it=s.querySelector('.items');const tight=it?[...it.querySelectorAll('.item')].map(e=>Math.round(e.clientHeight-e.firstElementChild.getBoundingClientRect().height-0)):[];return [s.id, Math.round(worst), Math.round(sb.height), s.scrollHeight>sb.height+1?'OVERFLOW':'ok', tight.join('/')] })""")
             print(mode, res)
             secs = await pg.query_selector_all(".page")
             for i, s in enumerate(secs, 1):

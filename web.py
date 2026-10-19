@@ -53,7 +53,7 @@ body{margin:0}
 .dots button.on i{opacity:1;height:16px;border-radius:3px}
 body.dark .dots i{background:#fff}
 @media (max-aspect-ratio:99/100){.dots{display:none}}
-@media (min-aspect-ratio:1/1){.hint{display:none}}
+@media (min-aspect-ratio:1/1){.hint{display:none!important}}
 .hint{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:6;display:flex;align-items:center;gap:10px;border:0;background:none;padding:0;cursor:pointer;font:500 15px "Encode Sans",Arial,sans-serif;color:#1A355C;-webkit-tap-highlight-color:transparent}
 .hint .lbl{background:#fff;padding:8px 12px;border-radius:20px;box-shadow:0 2px 10px rgba(26,53,92,.18);transition:opacity .4s}
 .hint.seen .lbl{opacity:0;pointer-events:none;width:0;padding:0;overflow:hidden}
@@ -63,7 +63,11 @@ body.last .hint .arr svg{transform:rotate(180deg)}
 body.dark .hint .arr{background:#fff}body.dark .hint .arr svg{stroke:#1A355C}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 @media (prefers-reduced-motion:reduce){.hint .arr{animation:none}}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@keyframes lift{from{transform:translateY(calc(var(--i)*var(--sh))) scaleY(1)}}
+@media (prefers-reduced-motion:no-preference){
+html{scroll-behavior:smooth}
+.slide .slats i{animation:lift 1.7s cubic-bezier(.7,0,.25,1) both;animation-delay:calc((11 - var(--i))*.05s + .45s)}
+}
 """
 
 JS = """
