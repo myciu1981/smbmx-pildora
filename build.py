@@ -144,8 +144,6 @@ img{display:block}
 .small{color:var(--gris)}
 .foot{color:var(--gris)}
 .foot a{color:var(--navy);font-weight:600}
-.slats{position:absolute;left:0;top:0;right:0;bottom:0;z-index:2;pointer-events:none}
-.slats i{position:absolute;left:0;right:0;top:0;height:var(--sh);background:#1A355C;transform-origin:0 0;transform:translateY(var(--y)) scaleY(var(--sc))}
 """
 
 PHONE_CSS = """
@@ -170,19 +168,16 @@ PHONE_CSS = """
 .foot .small{font-size:25px;line-height:1.3;margin-top:8px}
 .foot .link{display:block;font-size:30px;margin-top:12px}
 /* cover */
-.page.cover{background:#fff;color:var(--texto);padding:0;--sh:160px}
-.cover .chero{position:absolute;left:0;top:0;width:1080px;height:786px;background:#1A355C;z-index:1}
-.cover .czone{position:absolute;left:0;top:0;width:1080px;height:780px;padding:60px 72px 40px;display:flex;flex-direction:column;justify-content:center;z-index:3}
-.cover .ctitle{font-weight:500;color:#fff;font-size:108px;line-height:1.03;letter-spacing:-.01em}
-.cover .clines{margin-top:40px;border-top:2px solid rgba(255,255,255,.3)}
-.cover .cl{color:#fff;font-size:48px;font-weight:400;line-height:1.2;padding:17px 0;border-bottom:2px solid rgba(255,255,255,.3)}
-.cover .cbottom{position:absolute;left:72px;right:72px;top:1262px;z-index:3}
-.cover .lead{font-weight:600;color:#1A355C;font-size:34px;letter-spacing:.14em;text-transform:uppercase}
-.cover .sol{font-weight:500;color:var(--texto);font-size:50px;line-height:1.36;margin-top:20px}
+.page.cover{background:#fff;color:var(--texto);padding:72px 72px 80px}
+.cover .ctitle{font-weight:500;color:var(--navy);font-size:100px;line-height:1.04;letter-spacing:-.01em;margin-top:64px}
+.cover .clines{margin-top:36px;font-size:46px;line-height:1.3;color:var(--texto)}
+.cover .cl{padding:6px 0}
+.cover .cphoto{flex:1;min-height:0;margin:56px 0 52px;background-size:cover;background-position:center;box-shadow:0 26px 54px -10px rgba(26,53,92,.34),0 4px 14px rgba(26,53,92,.12)}
+.cover .lead{font-weight:600;color:var(--navy);font-size:30px;letter-spacing:.14em;text-transform:uppercase}
+.cover .sol{font-weight:500;color:var(--texto);font-size:42px;line-height:1.34;margin-top:14px}
+.cover .nw{white-space:nowrap}
 .cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
-.cover .cfoot{font-size:28px;line-height:1.35;color:var(--gris);margin-top:30px;max-width:800px}
-.cover .clogo{position:absolute;left:72px;bottom:100px;z-index:3}
-.cover .clogo img{width:540px;height:auto}
+.cover .cfoot{font-size:27px;line-height:1.35;color:var(--gris);margin-top:34px}
 /* closing */
 .page.close{background:var(--navy);color:#fff;padding-bottom:0}
 .close .logo{height:68px}
@@ -229,19 +224,16 @@ DESK_CSS = """
 .foot .small{font-size:22px;margin-top:4px}
 .foot .link{font-size:28px}
 /* cover */
-.page.cover{background:#fff;color:var(--texto);--sh:90px}
-.cover .chero{position:absolute;left:0;top:0;width:1920px;height:434px;background:#1A355C;z-index:1}
-.cover .czone{position:absolute;left:0;top:0;width:1920px;height:430px;padding:0 80px;display:flex;flex-direction:column;justify-content:center;z-index:3}
-.cover .ctitle{font-weight:500;color:#fff;font-size:100px;line-height:1.03;letter-spacing:-.01em;white-space:nowrap}
-.cover .clines{margin-top:30px;display:flex;gap:56px}
-.cover .cl{color:#fff;font-size:40px;font-weight:400;line-height:1.2;padding-top:14px;border-top:2px solid rgba(255,255,255,.4)}
-.cover .cbottom{position:absolute;left:80px;right:80px;top:690px;z-index:3}
-.cover .lead{font-weight:600;color:#1A355C;font-size:26px;letter-spacing:.14em;text-transform:uppercase}
-.cover .sol{font-weight:500;color:var(--texto);font-size:42px;line-height:1.35;margin-top:12px}
+.page.cover{background:#fff;color:var(--texto)}
+.cover .ctitle{position:absolute;left:80px;top:190px;width:880px;font-weight:500;color:var(--navy);font-size:92px;line-height:1.04;letter-spacing:-.01em}
+.cover .clines{position:absolute;left:80px;top:440px;width:880px;font-size:40px;line-height:1.3;color:var(--texto)}
+.cover .cl{padding:5px 0}
+.cover .cphoto{position:absolute;left:1030px;top:56px;width:810px;height:648px;background-size:cover;background-position:center;box-shadow:0 24px 50px -10px rgba(26,53,92,.34),0 4px 14px rgba(26,53,92,.12)}
+.cover .cbottom{position:absolute;left:80px;right:80px;top:790px}
+.cover .lead{font-weight:600;color:var(--navy);font-size:24px;letter-spacing:.14em;text-transform:uppercase}
+.cover .sol{font-weight:500;color:var(--texto);font-size:38px;line-height:1.34;margin-top:10px}
 .cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
-.cover .cfoot{font-size:24px;color:var(--gris);margin-top:20px}
-.cover .clogo{position:absolute;left:80px;bottom:56px;z-index:3}
-.cover .clogo img{width:420px;height:auto}
+.cover .cfoot{position:absolute;left:80px;bottom:48px;font-size:24px;color:var(--gris)}
 /* closing */
 .page.close{background:var(--navy);color:#fff}
 .close .left{width:1000px}
@@ -288,30 +280,20 @@ def product_page(p, mode):
             f'<div class="desc">{p["desc"]}</div></div></div>{ph}<div class="band"></div>'
             f'<div class="items">{items}</div>{foot}</section>')
 
-def slat_geometry(mode):
-    """Zakres listew po otwarciu: (y, h) dla 12 listew; odstepy rosna w dol."""
-    if mode == "phone":
-        top, h0, dh, g0, dg, sh = 785, 8, 2.4, 5, 1.8, 160
-    else:
-        top, h0, dh, g0, dg, sh = 434, 4, 1.2, 3, 0.9, 90
-    y, out = top, []
-    for k in range(12):
-        h = h0 + dh * k
-        out.append((round(y, 1), h / sh))
-        y += h + g0 + dg * k
-    return out
-
 def cover_page(mode):
     c = C["cover"]
     items = c["items"]
-    sol = "".join(f'{t}&nbsp;<span class="d">&middot;</span> ' for t in items[:-1]) + items[-1]
-    slats = "".join(f'<i style="--i:{k};--y:{y}px;--sc:{sc:.4f}"></i>' for k, (y, sc) in enumerate(slat_geometry(mode)))
+    sol = "".join(f'<span class="nw">{t}&nbsp;<span class="d">&middot;</span></span> ' for t in items[:-1]) + f'<span class="nw">{items[-1]}</span>'
     lines = "".join(f'<div class="cl">{t}</div>' for t in c["lines"])
-    return (f'<section class="page cover" id="p0"><div class="chero"></div>'
-            f'<div class="slats">{slats}</div>'
-            f'<div class="czone"><div class="ctitle">{c["title"]}</div><div class="clines">{lines}</div></div>'
-            f'<div class="cbottom"><div class="lead">{c["lead"]}</div><div class="sol">{sol}</div><div class="cfoot">{c["foot"]}</div></div>'
-            f'<div class="clogo">{logo()}</div></section>')
+    photo = '<div class="cphoto" style="background-image:url(photos/cover_facade.jpg)"></div>'
+    head = f'{logo()}<div class="ctitle">{c["title"]}</div><div class="clines">{lines}</div>'
+    low = f'<div class="lead">{c["lead"]}</div><div class="sol">{sol}</div>'
+    foot = f'<div class="cfoot">{c["foot"]}</div>'
+    if mode == "phone":
+        return f'<section class="page cover" id="p0">{head}{photo}{low}{foot}</section>'
+    return (f'<section class="page cover" id="p0"><div style="position:absolute;left:80px;top:56px">{logo()}</div>'
+            f'<div class="ctitle">{c["title"]}</div><div class="clines">{lines}</div>{photo}'
+            f'<div class="cbottom">{low}</div>{foot}</section>')
 
 def closing_page(mode):
     c = C["closing"]
