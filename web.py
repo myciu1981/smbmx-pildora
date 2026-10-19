@@ -12,7 +12,7 @@ OUT.mkdir(parents=True)
 for d in ("assets", "photos"):
     shutil.copytree(ROOT / d, OUT / d)
 # remove unused endorsement-on-light asset
-(OUT / "assets/GRUPO-VOES_Endorsement_ES_OnLight.svg").unlink(missing_ok=True)
+(OUT / "assets/GRUPO-VOES_Endorsement_ES_OnDark.svg").unlink(missing_ok=True)
 
 def scope(css, pre):
     css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
@@ -32,7 +32,7 @@ def sections(mode):
 def slides(mode, cls):
     out = []
     for i, (c, inner) in enumerate(sections(mode)):
-        dark = " dark" if "close" in c else ""
+        dark = ""
         out.append(f'<section class="slide {cls}{dark}" data-i="{i}"><div class="stage {c}">{inner}</div></section>')
     return "".join(out)
 

@@ -93,19 +93,19 @@ CONTENT = {
     "items":["Persianas enrollables de aluminio","Persianas venecianas exteriores","Screens solares exteriores","Mosquiteros"],
     "foot":"Fabricados en Europa · Para proyectos residenciales, comerciales y hoteleros."},
   "closing": {
-    "title":"Protección solar exterior premium para proyectos que exigen más.",
-    "body":"Sistemas de protección solar, seguridad y confort fabricados en Europa, para proyectos residenciales, comerciales y hoteleros.",
-    "b2b":"Atendemos exclusivamente a empresas y proyectos (B2B).",
+    "title":"Soluciones exteriores para ventanas, fabricadas en Europa.",
+    "body":"Protección solar, privacidad y confort para proyectos residenciales, comerciales y hoteleros.",
+    "b2b":"Atendemos exclusivamente a empresas y profesionales (B2B).",
     "with_title":"Trabajamos con:",
     "with":["Desarrolladores y constructoras.","Hoteles y empresas de hospitalidad.",
             "Fabricantes y distribuidores de ventanas y sistemas de protección solar."],
     "quote":"Cada proyecto se cotiza a la medida.",
-    "talk":"Hablemos de tu proyecto",
+    "talk":"¿Tienes un proyecto? Hablemos.",
     "contacts":[("tel","+52 81 2590 1796","tel:+528125901796"),
                 ("mail","info@simplemadeblinds.mx","mailto:info@simplemadeblinds.mx"),
                 ("web","simplemadeblinds.mx","https://simplemadeblinds.mx/"),
                 ("pin","Showroom en Monterrey, Cambridge 103 · próximamente",None)],
-    "endorse":"GRUPO-VOES_Endorsement_ES_OnDark.svg",
+    "endorse":"GRUPO-VOES_Endorsement_ES_OnLight.svg",
   },
  },
 }
@@ -179,20 +179,16 @@ PHONE_CSS = """
 .cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
 .cover .cfoot{font-size:27px;line-height:1.35;color:var(--gris);margin-top:34px}
 /* closing */
-.page.close{background:var(--navy);color:#fff;padding-bottom:0}
+.page.close{background:#fff;color:var(--texto);padding-bottom:0}
 .close .logo{height:68px}
-.close h1{font-weight:500;font-size:68px;line-height:1.1;margin-top:64px;letter-spacing:-.01em}
-.close .body{font-size:36px;line-height:1.4;margin-top:24px;color:#fff}
-.close .b2b{font-weight:600;font-size:40px;line-height:1.3;margin-top:32px;padding-left:26px;border-left:6px solid #fff}
-.close .with{margin-top:34px;font-size:34px;font-weight:600}
-.close ul{list-style:none;margin-top:8px}
-.close li{font-size:34px;line-height:1.32;padding:12px 0 12px 44px;position:relative;border-bottom:2px solid rgba(255,255,255,.28)}
-.close li:before{content:"";position:absolute;left:0;top:1.05em;width:26px;height:3px;background:#fff}
-.close .quote{font-size:36px;font-weight:500;margin-top:30px}
-.close h2{font-weight:500;font-size:56px;margin-top:48px}
-.contacts{margin-top:14px}
-.contact{display:flex;align-items:center;gap:26px;font-size:40px;padding:16px 0;font-weight:500}
-.contact .ic{color:#fff;width:60px;height:60px}
+.close h1{font-weight:500;font-size:46px;line-height:1.15;margin-top:130px;letter-spacing:-.01em;color:var(--navy)}
+.close .body{font-weight:500;font-size:68px;line-height:1.14;margin-top:30px;color:var(--navy);letter-spacing:-.01em}
+.close .b2b{font-weight:500;font-size:40px;line-height:1.3;margin-top:110px;padding-left:26px;border-left:6px solid #601B22}
+.close .quote{font-size:40px;font-weight:400;margin-top:22px;color:var(--gris)}
+.close h2{font-weight:500;font-size:64px;margin-top:130px;color:var(--navy)}
+.contacts{margin-top:24px}
+.contact{display:flex;align-items:center;gap:26px;font-size:40px;padding:24px 0;font-weight:500}
+.contact .ic{color:#601B22;width:60px;height:60px}
 .contact.sm{font-size:34px;font-weight:400;line-height:1.3}
 .endorse{margin-top:auto;padding:0 0 56px 0}
 .endorse img{height:34px;width:auto}
@@ -235,21 +231,17 @@ DESK_CSS = """
 .cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
 .cover .cfoot{position:absolute;left:80px;bottom:48px;font-size:24px;color:var(--gris)}
 /* closing */
-.page.close{background:var(--navy);color:#fff}
-.close .left{width:1000px}
-.close h1{font-weight:500;font-size:70px;line-height:1.1;margin-top:60px;letter-spacing:-.01em}
-.close .body{font-size:31px;line-height:1.45;margin-top:22px;width:900px}
-.close .b2b{font-weight:600;font-size:34px;line-height:1.3;margin-top:28px;padding-left:22px;border-left:5px solid #fff}
-.close .with{margin-top:28px;font-size:29px;font-weight:600}
-.close ul{list-style:none;margin-top:8px;width:900px}
-.close li{font-size:29px;line-height:1.3;padding:9px 0 9px 40px;position:relative;border-bottom:2px solid rgba(255,255,255,.28)}
-.close li:before{content:"";position:absolute;left:0;top:1.05em;width:24px;height:3px;background:#fff}
-.close .quote{font-size:31px;font-weight:500;margin-top:26px}
+.page.close{background:#fff;color:var(--texto)}
+.close .left{width:1080px}
+.close h1{font-weight:500;font-size:38px;line-height:1.15;margin-top:90px;letter-spacing:-.01em;color:var(--navy)}
+.close .body{font-weight:500;font-size:64px;line-height:1.14;margin-top:22px;width:1000px;color:var(--navy);letter-spacing:-.01em}
+.close .b2b{font-weight:500;font-size:34px;line-height:1.3;margin-top:70px;padding-left:22px;border-left:5px solid #601B22}
+.close .quote{font-size:34px;font-weight:400;margin-top:18px;color:var(--gris)}
 .rcol{position:absolute;left:1180px;top:176px;width:660px}
-.close h2{font-weight:500;font-size:56px;margin:0}
+.close h2{font-weight:500;font-size:56px;margin:0;color:var(--navy)}
 .contacts{margin-top:26px}
 .contact{display:flex;align-items:center;gap:24px;font-size:33px;padding:18px 0;font-weight:500}
-.contact .ic{color:#fff;width:56px;height:56px}
+.contact .ic{color:#601B22;width:56px;height:56px}
 .contact.sm{font-size:28px;font-weight:400;line-height:1.3}
 .endorse{position:absolute;right:88px;bottom:46px}
 .endorse img{height:34px;width:auto}
@@ -304,13 +296,13 @@ def closing_page(mode):
     contacts = "".join(contact(*x) for x in c["contacts"])
     endorse = f'<div class="endorse"><img src="assets/{c["endorse"]}" alt="Una marca de GRUPO VOES, S.A. de C.V."></div>'
     if mode == "phone":
-        return (f'<section class="page close" id="p7">{logo("White")}<h1>{c["title"]}</h1>'
+        return (f'<section class="page close" id="p7">{logo()}<h1>{c["title"]}</h1>'
                 f'<div class="body">{c["body"]}</div><div class="b2b">{c["b2b"]}</div>'
-                f'<div class="with">{c["with_title"]}</div><ul>{lis}</ul><div class="quote">{c["quote"]}</div>'
+                f'<div class="quote">{c["quote"]}</div>'
                 f'<h2>{c["talk"]}</h2><div class="contacts">{contacts}</div>{endorse}</section>')
-    return (f'<section class="page close" id="p7"><div class="left">{logo("White")}<h1>{c["title"]}</h1>'
+    return (f'<section class="page close" id="p7"><div class="left">{logo()}<h1>{c["title"]}</h1>'
             f'<div class="body">{c["body"]}</div><div class="b2b">{c["b2b"]}</div>'
-            f'<div class="with">{c["with_title"]}</div><ul>{lis}</ul><div class="quote">{c["quote"]}</div></div>'
+            f'<div class="quote">{c["quote"]}</div></div>'
             f'<div class="rcol"><h2>{c["talk"]}</h2><div class="contacts">{contacts}</div></div>{endorse}</section>')
 
 def build(mode):
