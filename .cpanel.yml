@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/myciu/public_html/simplemadeblinds.mx/p/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R site/p/bsxx4itt $DEPLOYPATH

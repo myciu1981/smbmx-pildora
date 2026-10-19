@@ -1,0 +1,14 @@
+# SMB MX - Pigułka produktów (ES)
+
+Generator strony slajdów (telefon + komputer) i PDF-ów.
+
+## Aktualizacja
+1. Edytuj teksty w `build.py` (słownik `CONTENT`) lub zdjęcia w `photos/`.
+2. `python3 build.py es && python3 render.py es && python3 web.py`
+   (wymaga Python 3, Playwright + Chromium, Pillow).
+3. Wynik: `site/p/bsxx4itt/` (strona) i `out/*.pdf` (PDF-y; kopia w `dist/`).
+4. `git commit` + `git push`, potem w cPanel: Git Version Control > Manage > Deploy HEAD Commit.
+
+Adres: https://simplemadeblinds.mx/p/bsxx4itt/ (noindex, bez linku z serwisu).
+Deploy: `.cpanel.yml` kopiuje `site/p/bsxx4itt` do `public_html/simplemadeblinds.mx/p/`.
+Marka 3.0 (Navy #1A355C, Merlot #601B22, Encode Sans). Treści: bez cen, bez nieudokumentowanych parametrów.
