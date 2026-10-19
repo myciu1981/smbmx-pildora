@@ -1,6 +1,6 @@
 import asyncio, glob
 from playwright.async_api import async_playwright
-U="file://"+__import__("os").path.abspath("site/p/bsxx4itt/index.html")+""
+U="file://"+__import__("os").path.abspath("site/p/pildora/index.html")+""
 async def main():
     async with async_playwright() as p:
         g=glob.glob("/opt/pw-browsers/chromium*/chrome-linux/chrome")+glob.glob("/opt/pw-browsers/chromium")

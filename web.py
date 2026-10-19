@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 import build as B
 
-SLUG = "bsxx4itt"
+SLUG = "pildora"
 OUT = ROOT / "site" / "p" / SLUG
 if OUT.parent.exists(): shutil.rmtree(OUT.parent)
 OUT.mkdir(parents=True)
@@ -117,9 +117,9 @@ html = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="description" content="{desc}">
 <meta property="og:type" content="website"><meta property="og:locale" content="es_MX">
 <meta property="og:title" content="Simple Made Blinds Mexico · Sistemas exteriores para ventanas">
-<meta property="og:url" content="https://simplemadeblinds.mx/p/bsxx4itt/"><meta property="og:site_name" content="Simple Made Blinds Mexico">
+<meta property="og:url" content="https://simplemadeblinds.mx/p/pildora/"><meta property="og:site_name" content="Simple Made Blinds Mexico">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://simplemadeblinds.mx/p/bsxx4itt/og-v2.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Simple Made Blinds Mexico - Sistemas exteriores para ventanas">
+<meta property="og:image" content="https://simplemadeblinds.mx/p/pildora/og-v2.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Simple Made Blinds Mexico - Sistemas exteriores para ventanas">
 <meta name="twitter:card" content="summary_large_image">
 <style>{css}</style></head><body>
 {slides("phone","ph")}{slides("desk","dk")}
