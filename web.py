@@ -119,7 +119,7 @@ html = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta property="og:title" content="Simple Made Blinds Mexico · Sistemas exteriores para ventanas">
 <meta property="og:url" content="https://simplemadeblinds.mx/p/pildora/"><meta property="og:site_name" content="Simple Made Blinds Mexico">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://simplemadeblinds.mx/p/pildora/og-v2.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Simple Made Blinds Mexico - Sistemas exteriores para ventanas">
+<meta property="og:image" content="https://simplemadeblinds.mx/p/pildora/og-v3.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="1200"><meta property="og:image:alt" content="Simple Made Blinds Mexico">
 <meta name="twitter:card" content="summary_large_image">
 <style>{css}</style></head><body>
 {slides("phone","ph")}{slides("desk","dk")}
@@ -144,5 +144,5 @@ AddType font/ttf .ttf
 (OUT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
 
 from PIL import Image
-shutil.copy(ROOT / "out" / "og-v2.jpg", OUT / "og-v2.jpg")
+shutil.copy(ROOT / "out" / "og-v3.jpg", OUT / "og-v3.jpg")
 print("ok", OUT, sum(f.stat().st_size for f in OUT.rglob("*") if f.is_file())//1024, "KB")
