@@ -145,7 +145,7 @@ img{display:block}
 .foot{color:var(--gris)}
 .foot a{color:var(--navy);font-weight:600}
 .slats{position:absolute;left:0;top:0;right:0;bottom:0;z-index:2;pointer-events:none}
-.slats i{position:absolute;left:0;right:0;top:0;height:var(--sh);background:#E8EEF7;transform-origin:0 0;transform:translateY(calc(var(--y0) + var(--i)*var(--pitch))) scaleY(var(--sc))}
+.slats i{position:absolute;left:0;right:0;top:0;height:var(--sh);background:#1A355C;transform-origin:0 0;transform:translateY(var(--y)) scaleY(var(--sc))}
 """
 
 PHONE_CSS = """
@@ -170,22 +170,19 @@ PHONE_CSS = """
 .foot .small{font-size:25px;line-height:1.3;margin-top:8px}
 .foot .link{display:block;font-size:30px;margin-top:12px}
 /* cover */
-.page.cover{background:var(--navy);color:#fff;padding:0;--sh:80px;--y0:1180px;--pitch:6px;--sc:.0375}
-.cover .cphoto{position:absolute;left:0;top:1312px;width:1080px;height:608px;z-index:1}
-.cover .cphoto img{width:100%;height:100%;object-fit:cover}
-.cover .cphoto:before{content:"";position:absolute;left:0;right:0;top:-1px;height:240px;background:linear-gradient(#1A355C,rgba(26,53,92,0))}
-.cover .cphoto:after{content:"";position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(rgba(26,53,92,0),rgba(26,53,92,.94))}
-.cover .czone{position:absolute;left:0;top:0;width:1080px;height:1180px;padding:72px;display:flex;flex-direction:column;z-index:3}
-.cover .logo{height:68px;width:auto;align-self:flex-start}
-.cover .ctext{margin:auto 0}
-.cover .ctitle{font-weight:500;color:#fff;font-size:118px;line-height:1.03;letter-spacing:-.01em}
-.cover .clines{margin-top:48px;border-top:2px solid rgba(255,255,255,.28)}
-.cover .cl{font-size:52px;font-weight:400;line-height:1.2;padding:20px 0;border-bottom:2px solid rgba(255,255,255,.28)}
-.cover .cbottom{position:absolute;left:72px;right:72px;bottom:52px;z-index:3}
-.cover .lead{font-weight:600;color:#fff;font-size:30px;letter-spacing:.14em;text-transform:uppercase}
-.cover .sol{font-weight:500;color:#fff;font-size:40px;line-height:1.4;margin-top:16px}
-.cover .sol .d{color:#fff;opacity:.6;margin:0 .1em}
-.cover .cfoot{font-size:26px;line-height:1.35;color:rgba(255,255,255,.75);margin-top:28px;max-width:780px}
+.page.cover{background:#fff;color:var(--texto);padding:0;--sh:160px}
+.cover .chero{position:absolute;left:0;top:0;width:1080px;height:786px;background:#1A355C;z-index:1}
+.cover .czone{position:absolute;left:0;top:0;width:1080px;height:780px;padding:60px 72px 40px;display:flex;flex-direction:column;justify-content:center;z-index:3}
+.cover .ctitle{font-weight:500;color:#fff;font-size:108px;line-height:1.03;letter-spacing:-.01em}
+.cover .clines{margin-top:40px;border-top:2px solid rgba(255,255,255,.3)}
+.cover .cl{color:#fff;font-size:48px;font-weight:400;line-height:1.2;padding:17px 0;border-bottom:2px solid rgba(255,255,255,.3)}
+.cover .cbottom{position:absolute;left:72px;right:72px;top:1262px;z-index:3}
+.cover .lead{font-weight:600;color:#1A355C;font-size:34px;letter-spacing:.14em;text-transform:uppercase}
+.cover .sol{font-weight:500;color:var(--texto);font-size:50px;line-height:1.36;margin-top:20px}
+.cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
+.cover .cfoot{font-size:28px;line-height:1.35;color:var(--gris);margin-top:30px;max-width:800px}
+.cover .clogo{position:absolute;left:72px;bottom:100px;z-index:3}
+.cover .clogo img{width:540px;height:auto}
 /* closing */
 .page.close{background:var(--navy);color:#fff;padding-bottom:0}
 .close .logo{height:68px}
@@ -232,22 +229,19 @@ DESK_CSS = """
 .foot .small{font-size:22px;margin-top:4px}
 .foot .link{font-size:28px}
 /* cover */
-.page.cover{background:var(--navy);color:#fff;--sh:45px;--y0:500px;--pitch:5px;--sc:.0667}
-.cover .cphoto{position:absolute;left:0;top:560px;width:1920px;height:520px;z-index:1}
-.cover .cphoto img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
-.cover .cphoto:before{content:"";position:absolute;left:0;right:0;top:-1px;height:170px;background:linear-gradient(#1A355C,rgba(26,53,92,0))}
-.cover .cphoto:after{content:"";position:absolute;left:0;right:0;bottom:0;height:230px;background:linear-gradient(rgba(26,53,92,0),rgba(26,53,92,.94))}
-.cover .czone{position:absolute;left:80px;top:56px;width:1700px;height:440px;z-index:3}
-.cover .logo{height:60px;width:auto;display:block}
-.cover .ctext{margin-top:40px}
-.cover .ctitle{font-weight:500;color:#fff;font-size:92px;line-height:1.03;letter-spacing:-.01em;white-space:nowrap}
-.cover .clines{margin-top:26px;display:flex;gap:56px}
-.cover .cl{font-size:38px;font-weight:400;line-height:1.2;padding-top:14px;border-top:2px solid rgba(255,255,255,.4)}
-.cover .cbottom{position:absolute;left:80px;right:80px;bottom:34px;z-index:3}
-.cover .lead{font-weight:600;color:#fff;font-size:22px;letter-spacing:.14em;text-transform:uppercase}
-.cover .sol{font-weight:500;color:#fff;font-size:34px;line-height:1.35;margin-top:10px}
-.cover .sol .d{color:#fff;opacity:.6;margin:0 .1em}
-.cover .cfoot{font-size:22px;color:rgba(255,255,255,.75);margin-top:14px}
+.page.cover{background:#fff;color:var(--texto);--sh:90px}
+.cover .chero{position:absolute;left:0;top:0;width:1920px;height:434px;background:#1A355C;z-index:1}
+.cover .czone{position:absolute;left:0;top:0;width:1920px;height:430px;padding:0 80px;display:flex;flex-direction:column;justify-content:center;z-index:3}
+.cover .ctitle{font-weight:500;color:#fff;font-size:100px;line-height:1.03;letter-spacing:-.01em;white-space:nowrap}
+.cover .clines{margin-top:30px;display:flex;gap:56px}
+.cover .cl{color:#fff;font-size:40px;font-weight:400;line-height:1.2;padding-top:14px;border-top:2px solid rgba(255,255,255,.4)}
+.cover .cbottom{position:absolute;left:80px;right:80px;top:690px;z-index:3}
+.cover .lead{font-weight:600;color:#1A355C;font-size:26px;letter-spacing:.14em;text-transform:uppercase}
+.cover .sol{font-weight:500;color:var(--texto);font-size:42px;line-height:1.35;margin-top:12px}
+.cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
+.cover .cfoot{font-size:24px;color:var(--gris);margin-top:20px}
+.cover .clogo{position:absolute;left:80px;bottom:56px;z-index:3}
+.cover .clogo img{width:420px;height:auto}
 /* closing */
 .page.close{background:var(--navy);color:#fff}
 .close .left{width:1000px}
@@ -294,16 +288,30 @@ def product_page(p, mode):
             f'<div class="desc">{p["desc"]}</div></div></div>{ph}<div class="band"></div>'
             f'<div class="items">{items}</div>{foot}</section>')
 
+def slat_geometry(mode):
+    """Zakres listew po otwarciu: (y, h) dla 12 listew; odstepy rosna w dol."""
+    if mode == "phone":
+        top, h0, dh, g0, dg, sh = 785, 8, 2.4, 5, 1.8, 160
+    else:
+        top, h0, dh, g0, dg, sh = 434, 4, 1.2, 3, 0.9, 90
+    y, out = top, []
+    for k in range(12):
+        h = h0 + dh * k
+        out.append((round(y, 1), h / sh))
+        y += h + g0 + dg * k
+    return out
+
 def cover_page(mode):
     c = C["cover"]
     items = c["items"]
     sol = "".join(f'{t}&nbsp;<span class="d">&middot;</span> ' for t in items[:-1]) + items[-1]
-    slats = "".join(f'<i style="--i:{k}"></i>' for k in range(24))
+    slats = "".join(f'<i style="--i:{k};--y:{y}px;--sc:{sc:.4f}"></i>' for k, (y, sc) in enumerate(slat_geometry(mode)))
     lines = "".join(f'<div class="cl">{t}</div>' for t in c["lines"])
-    return (f'<section class="page cover" id="p0"><div class="cphoto"><img src="photos/cover.jpg" alt="Monterrey"></div>'
+    return (f'<section class="page cover" id="p0"><div class="chero"></div>'
             f'<div class="slats">{slats}</div>'
-            f'<div class="czone">{logo("White")}<div class="ctext"><div class="ctitle">{c["title"]}</div><div class="clines">{lines}</div></div></div>'
-            f'<div class="cbottom"><div class="lead">{c["lead"]}</div><div class="sol">{sol}</div><div class="cfoot">{c["foot"]}</div></div></section>')
+            f'<div class="czone"><div class="ctitle">{c["title"]}</div><div class="clines">{lines}</div></div>'
+            f'<div class="cbottom"><div class="lead">{c["lead"]}</div><div class="sol">{sol}</div><div class="cfoot">{c["foot"]}</div></div>'
+            f'<div class="clogo">{logo()}</div></section>')
 
 def closing_page(mode):
     c = C["closing"]

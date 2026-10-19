@@ -32,7 +32,7 @@ def sections(mode):
 def slides(mode, cls):
     out = []
     for i, (c, inner) in enumerate(sections(mode)):
-        dark = " dark" if ("close" in c or "cover" in c) else ""
+        dark = " dark" if "close" in c else (" cv" if "cover" in c else "")
         out.append(f'<section class="slide {cls}{dark}" data-i="{i}"><div class="stage {c}">{inner}</div></section>')
     return "".join(out)
 
@@ -41,6 +41,7 @@ html{scroll-snap-type:y mandatory;overflow-y:scroll;background:#fff;-webkit-text
 body{margin:0}
 .slide{height:100vh;height:100dvh;width:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;background:#fff}
 .slide.dark{background:#1A355C}
+.slide.cv{background:linear-gradient(#1A355C 40%,#fff 40%)}
 .slide .stage{position:absolute;left:50%;top:50%;margin:0;transform-origin:0 0;flex:none}
 .dk{display:none}
 @media (min-aspect-ratio:1/1){.ph{display:none}.dk{display:block}}
@@ -63,12 +64,12 @@ body.last .hint .arr svg{transform:rotate(180deg)}
 body.dark .hint .arr{background:#fff}body.dark .hint .arr svg{stroke:#1A355C}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 @media (prefers-reduced-motion:reduce){.hint .arr{animation:none}}
-@keyframes lift{0%{transform:translateY(calc(var(--i)*var(--sh))) scaleY(1);background:#1A355C}72%{background:#1A355C}}
+@keyframes lift{0%{transform:translateY(calc(var(--i)*var(--sh))) scaleY(1)}}
 @keyframes fadein{from{opacity:0}}
 @media (prefers-reduced-motion:no-preference){
 html{scroll-behavior:smooth}
 .slide .slats i{animation:lift 2s cubic-bezier(.7,0,.25,1) both;animation-delay:calc((23 - var(--i))*.03s + .45s)}
-.slide .czone,.slide .cbottom{animation:fadein 1s ease both;animation-delay:1.6s}
+.slide .czone,.slide .cbottom,.slide .clogo{animation:fadein 1s ease both;animation-delay:1.6s}
 }
 """
 
