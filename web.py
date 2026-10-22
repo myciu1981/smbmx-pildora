@@ -138,6 +138,7 @@ html = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/png "access plus 7 days"
   ExpiresByType font/ttf "access plus 30 days"
   ExpiresByType image/svg+xml "access plus 30 days"
 </IfModule>

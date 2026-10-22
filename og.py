@@ -17,3 +17,6 @@ async def main():
         await pg.goto(f"file://{ROOT}/out/og.html"); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(400)
         await pg.screenshot(path=str(ROOT / "out" / "og-v4.png"))
         await b.close()
+
+
+asyncio.run(main())
