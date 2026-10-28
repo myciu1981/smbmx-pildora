@@ -87,9 +87,10 @@ CONTENT = {
              ("switch","Control","manual o automática; iluminación LED opcional.")],
     "small":"", "photos":["pg"], "wide":True},
   ],
-  "cover": {"title":"Sistemas exteriores para ventanas",
-    "lines":["Protección solar","Seguridad","Confort desde el exterior"],
-    "lead":"Nuestras soluciones:",
+  "cover": {"title":"Persianas europeas para el sol de México.",
+    "sub":"Control del calor y la luz desde el exterior. Soluciones a medida.",
+    "b2b":["Fabricadas en Polonia","Suministro B2B para proyectos y pedidos por volumen"],
+    "lead":"Nuestros sistemas:",
     "items":["Persianas enrollables de aluminio","Persianas venecianas exteriores","Screens solares exteriores","Mosquiteros"],
     "foot":"Fabricados en Europa · Para proyectos residenciales, comerciales y hoteleros."},
   "closing": {
@@ -169,15 +170,16 @@ PHONE_CSS = """
 .foot .link{display:block;font-size:30px;margin-top:12px}
 /* cover */
 .page.cover{background:var(--powder);color:var(--texto);padding:72px 72px 80px}
-.cover .ctitle{font-weight:500;color:var(--navy);font-size:100px;line-height:1.04;letter-spacing:-.01em;margin-top:64px}
-.cover .clines{margin-top:36px;font-size:46px;line-height:1.3;color:var(--texto)}
-.cover .cl{padding:6px 0}
+.cover .ctitle{font-weight:500;color:var(--navy);font-size:88px;line-height:1.06;letter-spacing:-.01em;margin-top:56px}
+.cover .csub{margin-top:28px;font-size:42px;line-height:1.3;font-weight:500;color:var(--merlot)}
+.cover .cb2b{margin-top:24px;font-size:34px;line-height:1.35;font-weight:600;color:var(--navy)}
 .cover .cphoto{flex:1;min-height:0;margin:56px 2px 52px;background-size:cover;background-position:center;background-color:#fff;border:12px solid #fff;outline:2px solid var(--navy)}
-.cover .lead{font-weight:600;color:var(--navy);font-size:30px;letter-spacing:.14em;text-transform:uppercase}
-.cover .sol{font-weight:500;color:var(--texto);font-size:42px;line-height:1.34;margin-top:14px}
+.cover .lead{font-weight:600;color:var(--merlot);font-size:30px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+.cover .sol{font-weight:500;color:var(--navy);font-size:33px;line-height:1.5;margin-top:14px;text-align:center}
+.cover .sol .row{white-space:nowrap}
 .cover .nw{white-space:nowrap}
-.cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
-.cover .cfoot{font-size:27px;line-height:1.35;color:var(--gris);margin-top:34px}
+.cover .sol .d{color:#601B22;font-weight:700;margin:0 .35em}
+.cover .cfoot{font-size:27px;line-height:1.35;color:var(--gris);margin-top:34px;text-align:center}
 /* closing */
 .page.close{background:var(--powder);color:var(--texto);padding-bottom:0}
 .close .logo{height:68px}
@@ -221,15 +223,16 @@ DESK_CSS = """
 .foot .link{font-size:28px}
 /* cover */
 .page.cover{background:var(--powder);color:var(--texto)}
-.cover .ctitle{position:absolute;left:80px;top:190px;width:880px;font-weight:500;color:var(--navy);font-size:92px;line-height:1.04;letter-spacing:-.01em}
-.cover .clines{position:absolute;left:80px;top:440px;width:880px;font-size:40px;line-height:1.3;color:var(--texto)}
-.cover .cl{padding:5px 0}
+.cover .chead{position:absolute;left:80px;top:170px;width:880px}
+.cover .ctitle{font-weight:500;color:var(--navy);font-size:80px;line-height:1.06;letter-spacing:-.01em}
+.cover .csub{margin-top:26px;font-size:36px;line-height:1.3;font-weight:500;color:var(--merlot);text-wrap:balance}
+.cover .cb2b{margin-top:22px;font-size:30px;line-height:1.4;font-weight:600;color:var(--navy)}
 .cover .cphoto{position:absolute;left:1030px;top:56px;width:810px;height:648px;background-size:cover;background-position:center;background-color:#fff;border:12px solid #fff;outline:2px solid var(--navy)}
-.cover .cbottom{position:absolute;left:80px;right:80px;top:790px}
-.cover .lead{font-weight:600;color:var(--navy);font-size:24px;letter-spacing:.14em;text-transform:uppercase}
-.cover .sol{font-weight:500;color:var(--texto);font-size:38px;line-height:1.34;margin-top:10px}
-.cover .sol .d{color:#601B22;font-weight:600;margin:0 .1em}
-.cover .cfoot{position:absolute;left:80px;bottom:48px;font-size:24px;color:var(--gris)}
+.cover .cbottom{position:absolute;left:80px;right:80px;top:770px}
+.cover .lead{font-weight:600;color:var(--merlot);font-size:24px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+.cover .sol{font-weight:500;color:var(--navy);font-size:36px;line-height:1.45;margin-top:10px;text-align:center}
+.cover .sol .d{color:#601B22;font-weight:700;margin:0 .35em}
+.cover .cfoot{position:absolute;left:80px;right:80px;bottom:48px;font-size:24px;color:var(--gris);text-align:center}
 /* closing */
 .page.close{background:var(--powder);color:var(--texto)}
 .close .left{width:1080px}
@@ -274,17 +277,19 @@ def product_page(p, mode):
 
 def cover_page(mode):
     c = C["cover"]
-    items = c["items"]
-    sol = "".join(f'<span class="nw">{t}&nbsp;<span class="d">&middot;</span></span> ' for t in items[:-1]) + f'<span class="nw">{items[-1]}</span>'
-    lines = "".join(f'<div class="cl">{t}</div>' for t in c["lines"])
+    it = c["items"]
+    d = '<span class="d">&middot;</span>'
+    sol = (f'<div class="row">{it[0]}{d}{it[3]}</div>'
+           f'<div class="row">{it[1]}{d}{it[2]}</div>')
+    b2b = "".join(f'<div>{t}</div>' for t in c["b2b"])
+    text = f'<div class="ctitle">{c["title"]}</div><div class="csub">{c["sub"]}</div><div class="cb2b">{b2b}</div>'
     photo = '<div class="cphoto" style="background-image:url(photos/cover_facade.jpg)"></div>'
-    head = f'{logo()}<div class="ctitle">{c["title"]}</div><div class="clines">{lines}</div>'
     low = f'<div class="lead">{c["lead"]}</div><div class="sol">{sol}</div>'
     foot = f'<div class="cfoot">{c["foot"]}</div>'
     if mode == "phone":
-        return f'<section class="page cover" id="p0">{head}{photo}{low}{foot}</section>'
+        return f'<section class="page cover" id="p0">{logo()}{text}{photo}{low}{foot}</section>'
     return (f'<section class="page cover" id="p0"><div style="position:absolute;left:80px;top:56px">{logo()}</div>'
-            f'<div class="ctitle">{c["title"]}</div><div class="clines">{lines}</div>{photo}'
+            f'<div class="chead">{text}</div>{photo}'
             f'<div class="cbottom">{low}</div>{foot}</section>')
 
 def closing_page(mode):
