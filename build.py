@@ -169,13 +169,13 @@ PHONE_CSS = """
 .foot .small{font-size:25px;line-height:1.3;margin-top:8px}
 .foot .link{display:block;font-size:30px;margin-top:12px}
 /* cover */
-.page.cover{background:var(--powder);color:var(--texto);padding:72px 72px 80px}
-.cover .ctitle{font-weight:500;color:var(--navy);font-size:88px;line-height:1.06;letter-spacing:-.01em;margin-top:56px}
-.cover .csub{margin-top:28px;font-size:42px;line-height:1.3;font-weight:500;color:var(--merlot)}
-.cover .cb2b{margin-top:24px;font-size:34px;line-height:1.35;font-weight:600;color:var(--navy)}
-.cover .cphoto{flex:1;min-height:0;margin:56px 2px 52px;background-size:cover;background-position:center;background-color:#fff;border:12px solid #fff;outline:2px solid var(--navy)}
-.cover .lead{font-weight:600;color:var(--merlot);font-size:30px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
-.cover .sol{font-weight:500;color:var(--navy);font-size:33px;line-height:1.5;margin-top:14px;text-align:center}
+.page.cover{background:var(--powder);color:var(--texto);padding:72px 72px 96px}
+.cover .ctitle{font-weight:500;color:var(--navy);font-size:88px;line-height:1.06;letter-spacing:-.01em;margin-top:84px}
+.cover .csub{margin-top:40px;font-size:42px;line-height:1.3;font-weight:500;color:var(--merlot)}
+.cover .cb2b{margin-top:34px;font-size:34px;line-height:1.35;font-weight:600;color:var(--navy)}
+.cover .cphoto{flex:1;min-height:0;margin:64px 2px 60px;background-size:cover;background-position:center;background-color:#fff;border:12px solid #fff;outline:2px solid var(--navy)}
+.cover .lead{font-weight:600;color:var(--merlot);font-size:36px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+.cover .sol{font-weight:500;color:var(--navy);font-size:35px;line-height:1.5;margin-top:16px;text-align:center;letter-spacing:-.005em}
 .cover .sol .row{white-space:nowrap}
 .cover .nw{white-space:nowrap}
 .cover .sol .d{color:#601B22;font-weight:700;margin:0 .35em}
@@ -223,14 +223,14 @@ DESK_CSS = """
 .foot .link{font-size:28px}
 /* cover */
 .page.cover{background:var(--powder);color:var(--texto)}
-.cover .chead{position:absolute;left:80px;top:170px;width:880px}
+.cover .chead{position:absolute;left:80px;top:190px;width:860px}
 .cover .ctitle{font-weight:500;color:var(--navy);font-size:80px;line-height:1.06;letter-spacing:-.01em}
-.cover .csub{margin-top:26px;font-size:36px;line-height:1.3;font-weight:500;color:var(--merlot);text-wrap:balance}
-.cover .cb2b{margin-top:22px;font-size:30px;line-height:1.4;font-weight:600;color:var(--navy)}
-.cover .cphoto{position:absolute;left:1030px;top:56px;width:810px;height:648px;background-size:cover;background-position:center;background-color:#fff;border:12px solid #fff;outline:2px solid var(--navy)}
-.cover .cbottom{position:absolute;left:80px;right:80px;top:770px}
-.cover .lead{font-weight:600;color:var(--merlot);font-size:24px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
-.cover .sol{font-weight:500;color:var(--navy);font-size:36px;line-height:1.45;margin-top:10px;text-align:center}
+.cover .csub{margin-top:36px;font-size:36px;line-height:1.3;font-weight:500;color:var(--merlot);text-wrap:balance}
+.cover .cb2b{margin-top:30px;font-size:30px;line-height:1.4;font-weight:600;color:var(--navy)}
+.cover .cphoto{position:absolute;left:990px;top:56px;width:870px;height:700px;background-size:cover;background-position:center;background-color:#fff;border:12px solid #fff;outline:2px solid var(--navy)}
+.cover .cbottom{position:absolute;left:80px;right:80px;top:842px}
+.cover .lead{font-weight:600;color:var(--merlot);font-size:30px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+.cover .sol{font-weight:500;color:var(--navy);font-size:44px;line-height:1.4;margin-top:12px;text-align:center}
 .cover .sol .d{color:#601B22;font-weight:700;margin:0 .35em}
 .cover .cfoot{position:absolute;left:80px;right:80px;bottom:48px;font-size:24px;color:var(--gris);text-align:center}
 /* closing */
@@ -285,7 +285,7 @@ def cover_page(mode):
     text = f'<div class="ctitle">{c["title"]}</div><div class="csub">{c["sub"]}</div><div class="cb2b">{b2b}</div>'
     photo = '<div class="cphoto" style="background-image:url(photos/cover_facade.jpg)"></div>'
     low = f'<div class="lead">{c["lead"]}</div><div class="sol">{sol}</div>'
-    foot = f'<div class="cfoot">{c["foot"]}</div>'
+    foot = ''
     if mode == "phone":
         return f'<section class="page cover" id="p0">{logo()}{text}{photo}{low}{foot}</section>'
     return (f'<section class="page cover" id="p0"><div style="position:absolute;left:80px;top:56px">{logo()}</div>'
