@@ -91,7 +91,7 @@ CONTENT = {
     "sub":"Control del calor y la luz desde el exterior. Soluciones a medida.",
     "b2b":["Fabricadas en Polonia","Suministro B2B para proyectos y pedidos por volumen"],
     "lead":"Nuestros sistemas:",
-    "items":["Persianas enrollables de aluminio","Persianas venecianas exteriores","Screens solares exteriores","Mosquiteros"],
+    "items":["Persianas de seguridad","Persianas venecianas exteriores","Screens solares exteriores","Mosquiteros"],
     "foot":"Fabricados en Europa · Para proyectos residenciales, comerciales y hoteleros."},
   "closing": {
     "title":"Soluciones exteriores para ventanas, fabricadas en Europa.",
