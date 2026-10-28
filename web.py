@@ -37,9 +37,9 @@ def slides(mode, cls):
     return "".join(out)
 
 EXTRA = """
-html{scroll-snap-type:y mandatory;overflow-y:scroll;background:#fff;-webkit-text-size-adjust:100%}
+html{scroll-snap-type:y mandatory;overflow-y:scroll;background:#F5F5F0;-webkit-text-size-adjust:100%}
 body{margin:0}
-.slide{height:100vh;height:100dvh;width:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;background:#fff}
+.slide{height:100vh;height:100dvh;width:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;background:#F5F5F0}
 .slide.dark{background:#1A355C}
 .slide .stage{position:absolute;left:50%;top:50%;margin:0;transform-origin:0 0;flex:none}
 .dk{display:none}
