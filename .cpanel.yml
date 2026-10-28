@@ -3,4 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/myciu/public_html/simplemadeblinds.mx/p/
     - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R site/p/capsula $DEPLOYPATH
     - /bin/cp -R site/p/pildora $DEPLOYPATH

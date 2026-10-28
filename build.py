@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Pildora de productos SMB MX - ES - telefono (1080x2400) y escritorio (1920x1080)
+# Cápsula de productos SMB MX - ES - telefono (1080x2400) y escritorio (1920x1080)
 import json, sys, asyncio, os
 from pathlib import Path
 
@@ -318,7 +318,7 @@ def build(mode):
 
 if __name__ == "__main__":
     for mode in ("phone", "desk"):
-        (ROOT / f"pildora_{LANG}_{mode}.html").write_text(build(mode), encoding="utf-8")
+        (ROOT / f"capsula_{LANG}_{mode}.html").write_text(build(mode), encoding="utf-8")
     # icon preview sheet
     names = list(ICONS)
     cells = "".join(f'<div style="width:160px;text-align:center;font:14px Arial;color:#333">{icon(n)}<div>{n}</div></div>' for n in names)

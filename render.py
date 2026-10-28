@@ -16,7 +16,7 @@ async def main():
         b = await p.chromium.launch(executable_path=exe) if exe else await p.chromium.launch()
         for mode, (w, h) in (("phone", (1080, 1920)), ("desk", (1920, 1080))):
             pg = await b.new_page(viewport={"width": w, "height": h})
-            await pg.goto(f"file://{ROOT}/pildora_{LANG}_{mode}.html")
+            await pg.goto(f"file://{ROOT}/capsula_{LANG}_{mode}.html")
             await pg.evaluate("document.fonts.ready")
             await pg.wait_for_timeout(500)
             # overflow check
@@ -29,7 +29,7 @@ async def main():
             secs = await pg.query_selector_all(".page")
             for i, s in enumerate(secs, 1):
                 await s.screenshot(path=f"{OUT}/{LANG}_{mode}_{i}.png")
-            await pg.pdf(path=f"{OUT}/SMBMX_pildora_{LANG}_{mode}.pdf", width=f"{w}px", height=f"{h}px",
+            await pg.pdf(path=f"{OUT}/SMBMX_capsula_{LANG}_{mode}.pdf", width=f"{w}px", height=f"{h}px",
                          print_background=True, prefer_css_page_size=True)
             await pg.close()
         await b.close()

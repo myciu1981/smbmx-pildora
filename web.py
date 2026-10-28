@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 import build as B
 
-SLUG = "pildora"
+SLUG = "capsula"
 OUT = ROOT / "site" / "p" / SLUG
 if OUT.parent.exists(): shutil.rmtree(OUT.parent)
 OUT.mkdir(parents=True)
@@ -119,9 +119,9 @@ html = f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="description" content="{desc}">
 <meta property="og:type" content="website"><meta property="og:locale" content="es_MX">
 <meta property="og:title" content="Simple Made Blinds Mexico · Sistemas exteriores para ventanas">
-<meta property="og:url" content="https://simplemadeblinds.mx/p/pildora/"><meta property="og:site_name" content="Simple Made Blinds Mexico">
+<meta property="og:url" content="https://simplemadeblinds.mx/p/capsula/"><meta property="og:site_name" content="Simple Made Blinds Mexico">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://simplemadeblinds.mx/p/pildora/og-v4.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="1200"><meta property="og:image:alt" content="Simple Made Blinds Mexico">
+<meta property="og:image" content="https://simplemadeblinds.mx/p/capsula/og-v4.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="1200"><meta property="og:image:alt" content="Simple Made Blinds Mexico">
 <meta name="twitter:card" content="summary_large_image">
 <style>{css}</style></head><body>
 {slides("phone","ph")}{slides("desk","dk")}
@@ -149,3 +149,10 @@ AddType font/ttf .ttf
 from PIL import Image
 shutil.copy(ROOT / "out" / "og-v4.png", OUT / "og-v4.png")
 print("ok", OUT, sum(f.stat().st_size for f in OUT.rglob("*") if f.is_file())//1024, "KB")
+
+# Redirección del enlace antiguo /p/pildora/ -> /p/capsula/ (301)
+OLD = ROOT / "site" / "p" / "pildora"
+OLD.mkdir(parents=True, exist_ok=True)
+(OLD / ".htaccess").write_text("RedirectMatch 301 ^/p/pildora(/.*)?$ https://simplemadeblinds.mx/p/capsula/\n")
+(OLD / "index.html").write_text('<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=https://simplemadeblinds.mx/p/capsula/"><link rel="canonical" href="https://simplemadeblinds.mx/p/capsula/"><a href="https://simplemadeblinds.mx/p/capsula/">simplemadeblinds.mx/p/capsula/</a>\n', encoding="utf-8")
+print("redirect ok", OLD)
